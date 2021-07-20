@@ -1,0 +1,19 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-12">
+    <h2>Mobiles</h2>
+    <!-- Slider 2 -->
+    <div class="owl-carousel" id="slider2">
+      {% for i in mob %}
+     <div class="item"><a href="{% url 'product-detail' i.id %}"><img src="{{i.product_image.url}}" alt="" height="200px"></a><span class="fw-bold">{{i.title}}</span><br><span class="fs-5">{{i.selling_price}}</span><br><span class="fs-5"><h5>Discount</h5>{{i.discounted_price}}</span></div>
+     {% endfor %}
+    </div>
+  </div>
+  
+ </div>
+</div>
+{% endblock main-content %}
