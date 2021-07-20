@@ -18,7 +18,7 @@ def home(request):
 def product_detail(request,pro_id):
     pro_detail=Product.objects.get(id=pro_id)
     return render(request,'app/productdetail.html',{'p_detail':pro_detail})
-'''hiiiiiiiii'''
+
 @login_required()
 def add_to_cart(request):
     usr=request.user
